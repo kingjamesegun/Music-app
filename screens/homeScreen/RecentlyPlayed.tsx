@@ -1,15 +1,62 @@
-import { View, Text, StyleSheet, SafeAreaView, ScrollView } from "react-native";
+import {
+	View,
+	Text,
+	StyleSheet,
+	SafeAreaView,
+	ScrollView,
+	ImageBackground,
+} from "react-native";
 import React from "react";
 import { colors } from "../../styles/colors";
 import HeaderTab from "../../components/header/HeaderTab";
+import ThrowbackCard from "../../components/cards/ThrowbackCard";
+import BeatlessCard from "../../components/cards/BeatlessCard";
 
+const image = { uri: "https://reactjs.org/logo-og.png" };
 const RecentlyPlayed = () => {
 	return (
-		<SafeAreaView style={styles.container}>
-			<View style={styles.details}>
-				<HeaderTab />
-			</View>
-		</SafeAreaView>
+		<View style={styles.container}>
+			<ImageBackground
+				source={require("../../assets/recentlybg.png")}
+				resizeMode="cover"
+				style={styles.image}
+			>
+				<SafeAreaView style={styles.container}>
+					<View style={styles.details}>
+						<HeaderTab />
+						<ScrollView showsVerticalScrollIndicator={false}>
+							<View style={styles.beatless}>
+								<View style={styles.scroll}>
+									<Text style={styles.beatlessText}>Recently Played</Text>
+									<ScrollView
+										horizontal={true}
+										showsHorizontalScrollIndicator={false}
+									>
+										<BeatlessCard />
+										<BeatlessCard />
+										<BeatlessCard />
+										<BeatlessCard />
+										<BeatlessCard />
+										<BeatlessCard />
+									</ScrollView>
+								</View>
+							</View>
+							<View style={styles.scroll}>
+								<Text style={styles.throwbackText}>Favourites</Text>
+								<ScrollView
+									horizontal={true}
+									showsHorizontalScrollIndicator={false}
+								>
+									<ThrowbackCard artistImage={true} />
+									<ThrowbackCard artistImage={true} />
+									<ThrowbackCard artistImage={true} />
+								</ScrollView>
+							</View>
+						</ScrollView>
+					</View>
+				</SafeAreaView>
+			</ImageBackground>
+		</View>
 	);
 };
 
@@ -17,15 +64,20 @@ export default RecentlyPlayed;
 
 const styles = StyleSheet.create({
 	container: {
-		paddingHorizontal: 15,
 		flex: 1,
-		backgroundColor: colors.primaryBlue,
 	},
 	details: {
 		paddingHorizontal: 20,
 	},
 	welcomeTextContainer: {
 		marginTop: 20,
+	},
+	beatless: {
+		marginTop: 250,
+	},
+	image: {
+		flex: 1,
+		justifyContent: "center",
 	},
 	welcomeText: {
 		color: colors.white,
@@ -35,6 +87,12 @@ const styles = StyleSheet.create({
 	throwbackText: {
 		color: colors.white,
 		fontSize: 18,
+		fontWeight: "bold",
+		marginBottom: 15,
+	},
+	beatlessText: {
+		color: colors.white,
+		fontSize: 24,
 		fontWeight: "bold",
 		marginBottom: 15,
 	},

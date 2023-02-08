@@ -5,6 +5,7 @@ import SearchScreen from "../screens/searchScreens/SearchScreen";
 import { colors } from "../styles/colors";
 import { Feather } from "@expo/vector-icons";
 import { BlurView } from "expo-blur";
+import HomeNavigator from "./HomeNavigator";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -23,7 +24,7 @@ const TabNavigation = () => {
 		>
 			<BottomTab.Screen
 				name="Home"
-				component={HomeScreen}
+				component={HomeNavigator}
 				options={{
 					tabBarLabel: "Home",
 					tabBarIcon: ({ color, size }) => (

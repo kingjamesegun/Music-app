@@ -1,14 +1,20 @@
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { colors } from "../../styles/colors";
+import { useNavigation } from "@react-navigation/native";
 
 type ThrowbackCardProps = {
 	artistImage: boolean;
 };
 
 const ThrowbackCard = ({ artistImage }: ThrowbackCardProps) => {
+	const navigation = useNavigation();
+
+	const handlePress = () => {
+		// navigation.navigate("RecentlyPlayed");
+	};
 	return (
-		<View style={styles.container}>
+		<TouchableOpacity style={styles.container} onPress={handlePress}>
 			<Image
 				source={require("../../assets/me.jpg")}
 				style={
@@ -21,7 +27,7 @@ const ThrowbackCard = ({ artistImage }: ThrowbackCardProps) => {
 				<Text style={styles.title}>90 Anthem </Text>
 				<Text style={styles.desc}>The songs rocked the 90s....</Text>
 			</View>
-		</View>
+		</TouchableOpacity>
 	);
 };
 

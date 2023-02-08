@@ -1,7 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import TabNavigation from "./TabNavigation";
+import TabNavigator from "./TabNavigation";
 import HomeScreen from "../screens/homeScreen/HomeScreen";
 
 const Stack = createStackNavigator();
@@ -13,7 +13,7 @@ const RootNavigation = () => {
 				headerShown: false,
 			}}
 		>
-			<Stack.Screen name="Tab" component={HomeScreen} />
+			<Stack.Screen name="Tab" component={TabNavigator} />
 		</Stack.Navigator>
 	);
 };

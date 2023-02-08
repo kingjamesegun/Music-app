@@ -4,20 +4,25 @@ import { colors } from "../../styles/colors";
 import HeaderTab from "../../components/header/HeaderTab";
 import ThrowbackCard from "../../components/cards/ThrowbackCard";
 import BeatlessCard from "../../components/cards/BeatlessCard";
+import { StatusBar } from "expo-status-bar";
 
 const HomeScreen = () => {
 	return (
 		<SafeAreaView style={styles.container}>
+			<StatusBar style="light" />
 			<View style={styles.details}>
 				<HeaderTab />
-				<ScrollView>
+				<ScrollView showsVerticalScrollIndicator={false}>
 					<View style={styles.welcomeTextContainer}>
 						<Text style={styles.welcomeText}>Hello,</Text>
 						<Text style={styles.welcomeText}>Diavanda</Text>
 					</View>
 					<View style={styles.scroll}>
 						<Text style={styles.throwbackText}>Throwback</Text>
-						<ScrollView horizontal={true}>
+						<ScrollView
+							horizontal={true}
+							showsHorizontalScrollIndicator={false}
+						>
 							<ThrowbackCard artistImage={false} />
 							<ThrowbackCard artistImage={false} />
 							<ThrowbackCard artistImage={false} />
@@ -26,7 +31,10 @@ const HomeScreen = () => {
 					</View>
 					<View style={styles.scroll}>
 						<Text style={styles.throwbackText}>The Beatless</Text>
-						<ScrollView horizontal={true}>
+						<ScrollView
+							horizontal={true}
+							showsHorizontalScrollIndicator={false}
+						>
 							<BeatlessCard />
 							<BeatlessCard />
 							<BeatlessCard />
@@ -37,7 +45,10 @@ const HomeScreen = () => {
 					</View>
 					<View style={styles.scroll}>
 						<Text style={styles.throwbackText}>Recentely Played</Text>
-						<ScrollView horizontal={true}>
+						<ScrollView
+							horizontal={true}
+							showsHorizontalScrollIndicator={false}
+						>
 							<ThrowbackCard artistImage={true} />
 							<ThrowbackCard artistImage={true} />
 							<ThrowbackCard artistImage={true} />
