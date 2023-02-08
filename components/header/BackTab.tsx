@@ -21,7 +21,6 @@ export default BackTab;
 const styles = StyleSheet.create({
 	container: {
 		display: "flex",
-		paddingVertical: 10,
 		justifyContent: "space-between",
 		flexDirection: "row",
 		alignItems: "center",
