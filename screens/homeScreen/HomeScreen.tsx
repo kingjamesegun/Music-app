@@ -3,33 +3,47 @@ import React from "react";
 import { colors } from "../../styles/colors";
 import HeaderTab from "../../components/header/HeaderTab";
 import ThrowbackCard from "../../components/cards/ThrowbackCard";
+import BeatlessCard from "../../components/cards/BeatlessCard";
 
 const HomeScreen = () => {
 	return (
 		<SafeAreaView style={styles.container}>
 			<View style={styles.details}>
 				<HeaderTab />
-				<View style={styles.welcomeTextContainer}>
-					<Text style={styles.welcomeText}>Hello,</Text>
-					<Text style={styles.welcomeText}>Diavanda</Text>
-				</View>
-				<View style={styles.scroll}>
-					<Text style={styles.throwbackText}>Throwback</Text>
-					<ScrollView horizontal={true}>
-						<ThrowbackCard artistImage={false} />
-						<ThrowbackCard artistImage={false} />
-						<ThrowbackCard artistImage={false} />
-						<ThrowbackCard artistImage={false} />
-					</ScrollView>
-				</View>
-				<View style={styles.scroll}>
-					<Text style={styles.throwbackText}>Recentely Played</Text>
-					<ScrollView horizontal={true}>
-						<ThrowbackCard artistImage={true} />
-						<ThrowbackCard artistImage={true} />
-						<ThrowbackCard artistImage={true} />
-					</ScrollView>
-				</View>
+				<ScrollView>
+					<View style={styles.welcomeTextContainer}>
+						<Text style={styles.welcomeText}>Hello,</Text>
+						<Text style={styles.welcomeText}>Diavanda</Text>
+					</View>
+					<View style={styles.scroll}>
+						<Text style={styles.throwbackText}>Throwback</Text>
+						<ScrollView horizontal={true}>
+							<ThrowbackCard artistImage={false} />
+							<ThrowbackCard artistImage={false} />
+							<ThrowbackCard artistImage={false} />
+							<ThrowbackCard artistImage={false} />
+						</ScrollView>
+					</View>
+					<View style={styles.scroll}>
+						<Text style={styles.throwbackText}>The Beatless</Text>
+						<ScrollView horizontal={true}>
+							<BeatlessCard />
+							<BeatlessCard />
+							<BeatlessCard />
+							<BeatlessCard />
+							<BeatlessCard />
+							<BeatlessCard />
+						</ScrollView>
+					</View>
+					<View style={styles.scroll}>
+						<Text style={styles.throwbackText}>Recentely Played</Text>
+						<ScrollView horizontal={true}>
+							<ThrowbackCard artistImage={true} />
+							<ThrowbackCard artistImage={true} />
+							<ThrowbackCard artistImage={true} />
+						</ScrollView>
+					</View>
+				</ScrollView>
 			</View>
 		</SafeAreaView>
 	);

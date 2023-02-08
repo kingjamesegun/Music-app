@@ -26,7 +26,6 @@ export default HeaderTab;
 const styles = StyleSheet.create({
 	container: {
 		display: "flex",
-		paddingHorizontal: 15,
 		paddingVertical: 10,
 		justifyContent: "space-between",
 		flexDirection: "row",

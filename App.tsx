@@ -1,13 +1,15 @@
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import "react-native-gesture-handler";
 
 import { NavigationContainer } from "@react-navigation/native";
-import MainNavigation from "./navigation/MainNavigation";
+import MainNavigation from "./navigation/TabNavigation";
+import RootNavigation from "./navigation/RootNavigation";
+import TabNavigation from "./navigation/TabNavigation";
 
 export default function App() {
 	return (
 		<NavigationContainer>
-			<MainNavigation />
+			<RootNavigation />
 		</NavigationContainer>
 	);
 }

@@ -8,7 +8,7 @@ import { BlurView } from "expo-blur";
 
 const BottomTab = createBottomTabNavigator();
 
-const MainNavigation = () => {
+const TabNavigation = () => {
 	return (
 		<BottomTab.Navigator
 			initialRouteName="Home"
@@ -62,4 +62,4 @@ const MainNavigation = () => {
 	);
 };
 
-export default MainNavigation;
+export default TabNavigation;
