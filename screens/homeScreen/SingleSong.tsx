@@ -27,7 +27,7 @@ const SingleSong = () => {
 								source={require("../../assets/me.jpg")}
 								style={styles.postImage}
 							/>
-							<Text style={styles.title}>90s Rock Anthem</Text>
+							<Text style={styles.title}>90s Rock </Text>
 						</View>
 					</View>
 				</SafeAreaView>
