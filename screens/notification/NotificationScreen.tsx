@@ -32,7 +32,7 @@ const NotificationScreen = () => {
 					</View>
 				</View>
 
-				<ScrollView>
+				<ScrollView showsVerticalScrollIndicator={false}>
 					<NotificationCard />
 					<NotificationCard />
 					<NotificationCard />
@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		justifyContent: "space-between",
 		marginVertical: 10,
+		paddingBottom: 10,
 		alignItems: "center",
 	},
 	btns: {
