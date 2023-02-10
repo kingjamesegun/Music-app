@@ -5,4 +5,5 @@ export const colors = {
 	brown: "F6D68D",
 	blueLight: "#33363F",
 	greenLight: "#3D9388",
+	gray: "#7B8095",
 };
