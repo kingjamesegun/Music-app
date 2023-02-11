@@ -6,6 +6,7 @@ import { colors } from "../styles/colors";
 import { Feather } from "@expo/vector-icons";
 import { BlurView } from "expo-blur";
 import HomeNavigator from "./HomeNavigator";
+import { Text } from "react-native";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -26,12 +27,18 @@ const TabNavigation = () => {
 				name="Home"
 				component={HomeNavigator}
 				options={{
-					tabBarLabel: "Home",
-					tabBarIcon: ({ color, size }) => (
-						<Feather name="home" color={colors.blueLight} size={size} />
+					tabBarLabel: ({ focused, color }) => (
+						<Text style={{ color: focused ? colors.brown : colors.gray }}>
+							Home
+						</Text>
 					),
-					tabBarActiveTintColor: colors.blueLight,
-					tabBarInactiveTintColor: colors.brown,
+					tabBarIcon: ({ color, focused, size }) => (
+						<Feather
+							name="home"
+							color={focused ? colors.brown : colors.blueLight}
+							size={size}
+						/>
+					),
 					tabBarBackground: () => <BlurView tint="light" intensity={100} />,
 				}}
 			/>
@@ -39,24 +46,36 @@ const TabNavigation = () => {
 				name="Search"
 				component={SearchScreen}
 				options={{
-					tabBarLabel: "Search",
-					tabBarIcon: ({ color, size }) => (
-						<Feather name="search" color={colors.blueLight} size={size} />
+					tabBarLabel: ({ focused, color }) => (
+						<Text style={{ color: focused ? colors.brown : colors.gray }}>
+							Search
+						</Text>
 					),
-					tabBarActiveTintColor: colors.blueLight,
-					tabBarInactiveTintColor: colors.brown,
+					tabBarIcon: ({ color, focused, size }) => (
+						<Feather
+							name="search"
+							color={focused ? colors.brown : colors.blueLight}
+							size={size}
+						/>
+					),
 				}}
 			/>
 			<BottomTab.Screen
 				name="Library"
 				component={LibraryScreen}
 				options={{
-					tabBarLabel: "Library",
-					tabBarIcon: ({ color, size }) => (
-						<Feather name="music" color={colors.blueLight} size={size} />
+					tabBarLabel: ({ focused, color }) => (
+						<Text style={{ color: focused ? colors.brown : colors.gray }}>
+							Library
+						</Text>
 					),
-					tabBarActiveTintColor: colors.blueLight,
-					tabBarInactiveTintColor: colors.brown,
+					tabBarIcon: ({ color, focused, size }) => (
+						<Feather
+							name="music"
+							color={focused ? colors.brown : colors.gray}
+							size={size}
+						/>
+					),
 				}}
 			/>
 		</BottomTab.Navigator>
