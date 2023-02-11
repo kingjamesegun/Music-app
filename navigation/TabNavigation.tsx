@@ -7,6 +7,7 @@ import { Feather } from "@expo/vector-icons";
 import { BlurView } from "expo-blur";
 import HomeNavigator from "./HomeNavigator";
 import { Text } from "react-native";
+import BrowseScreen from "../screens/searchScreens/BrowseScreen";
 
 const BottomTab = createBottomTabNavigator();
 
@@ -44,7 +45,7 @@ const TabNavigation = () => {
 			/>
 			<BottomTab.Screen
 				name="Search"
-				component={SearchScreen}
+				component={BrowseScreen}
 				options={{
 					tabBarLabel: ({ focused, color }) => (
 						<Text style={{ color: focused ? colors.brown : colors.gray }}>
