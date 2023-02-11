@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
 		flexDirection: "row",
 		flex: 2,
 		justifyContent: "space-between",
-		paddingHorizontal: 15,
+		paddingHorizontal: 5,
 		marginTop: 15,
 	},
 	scrollDetails: {

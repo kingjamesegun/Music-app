@@ -20,6 +20,8 @@ const styles = StyleSheet.create({
 	container: {
 		width: " 50%",
 		position: "relative",
+		paddingHorizontal: 10,
+		marginVertical: 10,
 	},
 	image: {
 		height: 120,
@@ -31,7 +33,8 @@ const styles = StyleSheet.create({
 		color: colors.white,
 		fontWeight: "bold",
 		position: "absolute",
-		bottom: 5,
+		bottom: 10,
 		width: "100%",
+		left: 15,
 	},
 });
