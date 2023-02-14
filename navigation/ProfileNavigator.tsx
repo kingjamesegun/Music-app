@@ -10,18 +10,18 @@ import ProfileScreen from "../screens/profileScreen/ProfileScreen";
 
 const Stack = createStackNavigator();
 
-const HomeNavigator = () => {
+const ProfileNavigator = () => {
 	return (
 		<Stack.Navigator
 			screenOptions={{
 				headerShown: false,
 			}}
 		>
-			<Stack.Screen name="RecentlyPlayed" component={ProfileScreen} />
+			<Stack.Screen name="ProfileScreen" component={ProfileScreen} />
 
 			{/* <Stack.Screen name="HomeMain" component={HomeScreen} /> */}
 		</Stack.Navigator>
 	);
 };
 
-export default HomeNavigator;
+export default ProfileNavigator;
