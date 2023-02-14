@@ -21,11 +21,11 @@ const ProfileScreen = () => {
 					<View style={styles.follow}>
 						<View style={styles.followDetails}>
 							<Text style={styles.number}>1.232</Text>
-							<Text style={styles.followTag}> Follwers</Text>
+							<Text style={styles.followTag}> Followers</Text>
 						</View>
-						<View>
-							<Text>900</Text>
-							<Text>Follwing</Text>
+						<View style={styles.followDetails}>
+							<Text style={styles.number}>1.232</Text>
+							<Text style={styles.followTag}> Following</Text>
 						</View>
 					</View>
 				</View>
@@ -84,10 +84,15 @@ const styles = StyleSheet.create({
 	followDetails: {
 		paddingVertical: 10,
 		paddingHorizontal: 15,
+		alignItems: "center",
 	},
 	number: {
 		fontSize: 20,
 		color: colors.white,
 		fontWeight: "bold",
+	},
+	followTag: {
+		fontSize: 16,
+		color: colors.gray,
 	},
 });
