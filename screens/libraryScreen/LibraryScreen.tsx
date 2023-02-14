@@ -1,8 +1,10 @@
-import { View, Text, SafeAreaView, StyleSheet } from "react-native";
+import { View, Text, SafeAreaView, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 import { colors } from "../../styles/colors";
 import LibraryHeader from "../../components/header/LibraryHeader";
 import SearchInput from "../../components/inputs/SearchInput";
+import SingleSong from "../homeScreen/SingleSong";
+import SongList from "../../components/cards/SongList";
 
 const LibraryScreen = () => {
 	return (
@@ -10,6 +12,15 @@ const LibraryScreen = () => {
 			<View style={styles.details}>
 				<LibraryHeader />
 				<SearchInput />
+				<ScrollView>
+					<View style={styles.scrollContainer}>
+						<SongList />
+						<SongList />
+						<SongList />
+						<SongList />
+						<SongList />
+					</View>
+				</ScrollView>
 			</View>
 		</SafeAreaView>
 	);
@@ -24,5 +35,8 @@ const styles = StyleSheet.create({
 	},
 	details: {
 		paddingHorizontal: 15,
+	},
+	scrollContainer: {
+		marginTop: 15,
 	},
 });

@@ -16,7 +16,7 @@ const HomeNavigator = () => {
 				headerShown: false,
 			}}
 		>
-			<Stack.Screen name="RecentlyPlayed" component={NotificationScreen} />
+			<Stack.Screen name="RecentlyPlayed" component={SingleSong} />
 
 			{/* <Stack.Screen name="HomeMain" component={HomeScreen} /> */}
 		</Stack.Navigator>
