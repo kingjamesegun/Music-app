@@ -2,6 +2,7 @@ import { View, Text, SafeAreaView, StyleSheet, Image } from "react-native";
 import React from "react";
 import { colors } from "../../styles/colors";
 import LibraryHeader from "../../components/header/LibraryHeader";
+import ProfileDropdown from "../../components/dropdown/ProfileDropdown";
 
 const ProfileScreen = () => {
 	return (
@@ -29,6 +30,9 @@ const ProfileScreen = () => {
 						</View>
 					</View>
 				</View>
+			</View>
+			<View>
+				<ProfileDropdown />
 			</View>
 		</SafeAreaView>
 	);
