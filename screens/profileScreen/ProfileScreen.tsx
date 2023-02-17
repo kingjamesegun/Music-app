@@ -31,8 +31,10 @@ const ProfileScreen = () => {
 					</View>
 				</View>
 			</View>
-			<View>
-				<ProfileDropdown />
+			<View style={styles.dropdown}>
+				<ProfileDropdown label="Settings" />
+				<ProfileDropdown label="About Gbedu" />
+				<ProfileDropdown label="Logout" />
 			</View>
 		</SafeAreaView>
 	);
@@ -68,6 +70,9 @@ const styles = StyleSheet.create({
 		fontSize: 14,
 		color: colors.gray,
 		marginVertical: 5,
+	},
+	dropdown: {
+		marginTop: 15,
 	},
 	editBtn: {
 		borderRadius: 20,

@@ -3,15 +3,19 @@ import React, { useState } from "react";
 import { MaterialIcons } from "@expo/vector-icons";
 import { colors } from "../../styles/colors";
 
-const ProfileDropdown = () => {
+type ProfileDropdownProps = {
+	label: string;
+};
+
+const ProfileDropdown = ({ label }: ProfileDropdownProps) => {
 	const [open, setOpen] = useState(false);
-	const handlePress = (prev: boolean) => {
-		!prev;
+	const handlePress = () => {
+		setOpen((prev: boolean) => !prev);
 	};
 	return (
 		<View style={styles.container}>
 			<View style={styles.dropdown}>
-				<Text style={styles.label}>Settings</Text>
+				<Text style={styles.label}>{label}</Text>
 				<MaterialIcons
 					onPress={handlePress}
 					name="navigate-next"
@@ -21,7 +25,6 @@ const ProfileDropdown = () => {
 			</View>
 			{open ? (
 				<View>
-					{" "}
 					<Text>Blah blah</Text>
 				</View>
 			) : null}
