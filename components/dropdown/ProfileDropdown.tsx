@@ -16,12 +16,21 @@ const ProfileDropdown = ({ label }: ProfileDropdownProps) => {
 		<View style={styles.container}>
 			<View style={styles.dropdown}>
 				<Text style={styles.label}>{label}</Text>
-				<MaterialIcons
-					onPress={handlePress}
-					name="navigate-next"
-					size={24}
-					color={colors.white}
-				/>
+				{!open ? (
+					<MaterialIcons
+						onPress={handlePress}
+						name="navigate-next"
+						size={24}
+						color={colors.white}
+					/>
+				) : (
+					<MaterialIcons
+						onPress={handlePress}
+						name="keyboard-arrow-down"
+						size={24}
+						color={colors.white}
+					/>
+				)}
 			</View>
 			{open ? (
 				<View>

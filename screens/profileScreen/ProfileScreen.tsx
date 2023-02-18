@@ -3,10 +3,13 @@ import React from "react";
 import { colors } from "../../styles/colors";
 import LibraryHeader from "../../components/header/LibraryHeader";
 import ProfileDropdown from "../../components/dropdown/ProfileDropdown";
+import { StatusBar } from "expo-status-bar";
 
 const ProfileScreen = () => {
 	return (
 		<SafeAreaView style={styles.container}>
+			<StatusBar style="light" />
+
 			<View style={styles.details}>
 				<LibraryHeader />
 				<View style={styles.profileDetails}>
