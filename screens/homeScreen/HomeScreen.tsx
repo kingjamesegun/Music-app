@@ -5,6 +5,7 @@ import HeaderTab from "../../components/header/HeaderTab";
 import ThrowbackCard from "../../components/cards/ThrowbackCard";
 import BeatlessCard from "../../components/cards/BeatlessCard";
 import { StatusBar } from "expo-status-bar";
+import { musicData } from "../../utils/Music";
 
 const HomeScreen = () => {
 	return (
@@ -14,8 +15,8 @@ const HomeScreen = () => {
 				<HeaderTab />
 				<ScrollView showsVerticalScrollIndicator={false}>
 					<View style={styles.welcomeTextContainer}>
-						<Text style={styles.welcomeText}>Hello,</Text>
-						<Text style={styles.welcomeText}>Diavanda</Text>
+						<Text style={styles.welcomeText}>How far,</Text>
+						<Text style={styles.welcomeText}>Dupe</Text>
 					</View>
 					<View style={styles.scroll}>
 						<Text style={styles.throwbackText}>Throwback</Text>
@@ -23,10 +24,19 @@ const HomeScreen = () => {
 							horizontal={true}
 							showsHorizontalScrollIndicator={false}
 						>
+							{musicData.map((item, index) => (
+								<ThrowbackCard
+									artistImage={false}
+									image={item.image}
+									key={item.title}
+									title={item.title}
+									desc={item.description}
+								/>
+							))}
+							{/* <ThrowbackCard artistImage={false} />
 							<ThrowbackCard artistImage={false} />
 							<ThrowbackCard artistImage={false} />
-							<ThrowbackCard artistImage={false} />
-							<ThrowbackCard artistImage={false} />
+							<ThrowbackCard artistImage={false} /> */}
 						</ScrollView>
 					</View>
 					<View style={styles.scroll}>
@@ -49,9 +59,15 @@ const HomeScreen = () => {
 							horizontal={true}
 							showsHorizontalScrollIndicator={false}
 						>
-							<ThrowbackCard artistImage={true} />
-							<ThrowbackCard artistImage={true} />
-							<ThrowbackCard artistImage={true} />
+							{musicData.map((item, index) => (
+								<ThrowbackCard
+									key={item.title}
+									artistImage={false}
+									image={item.image}
+									title={item.title}
+									desc={item.description}
+								/>
+							))}
 						</ScrollView>
 					</View>
 				</ScrollView>

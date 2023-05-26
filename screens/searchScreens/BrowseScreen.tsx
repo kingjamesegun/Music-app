@@ -6,7 +6,7 @@ import {
 	ScrollView,
 	FlatList,
 } from "react-native";
-import React from "react";
+import { useRef, useState, useEffect } from "react";
 import HeaderTab from "../../components/header/HeaderTab";
 import { colors } from "../../styles/colors";
 import SearchInput from "../../components/inputs/SearchInput";
@@ -16,6 +16,8 @@ import CategoryCard from "../../components/cards/CategoryCard";
 import SmallBrowseCard from "../../components/cards/SmallBrowseCard";
 
 const BrowseScreen = () => {
+	const ref = useRef<FlatList>(null);
+
 	return (
 		<SafeAreaView style={styles.container}>
 			<View style={styles.details}>
@@ -43,6 +45,7 @@ const BrowseScreen = () => {
 
 				<View style={styles.smallCards}>
 					<FlatList
+						ref={ref}
 						numColumns={3}
 						data={categories}
 						renderItem={({ item }) => <SmallBrowseCard />}

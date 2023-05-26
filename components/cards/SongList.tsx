@@ -3,14 +3,20 @@ import React from "react";
 import { colors } from "../../styles/colors";
 import { Entypo } from "@expo/vector-icons";
 
-const SongList = () => {
+type SongListProps = {
+	title: string;
+	desc: string;
+	key: string;
+	image: string;
+};
+const SongList = ({ title, desc, image }: SongListProps) => {
 	return (
 		<View style={styles.container}>
 			<View style={styles.songDetails}>
 				<Image source={require("../../assets/me.jpg")} style={styles.image} />
 				<View>
-					<Text style={styles.title}>Killing In the name</Text>
-					<Text style={styles.desc}>Rage against the machine</Text>
+					<Text style={styles.title}>{title}</Text>
+					<Text style={styles.desc}>{desc}</Text>
 				</View>
 			</View>
 			<View style={styles.dots}>

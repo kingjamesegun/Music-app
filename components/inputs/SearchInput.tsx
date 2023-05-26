@@ -18,6 +18,7 @@ const SearchInput = () => {
 				placeholder="Search"
 				style={styles.input}
 				placeholderTextColor={colors.brown}
+				autoFocus={true}
 			/>
 		</View>
 	);

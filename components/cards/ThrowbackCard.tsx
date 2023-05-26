@@ -5,9 +5,17 @@ import { useNavigation } from "@react-navigation/native";
 
 type ThrowbackCardProps = {
 	artistImage: boolean;
+	image: string;
+	title: string;
+	desc: string;
 };
 
-const ThrowbackCard = ({ artistImage }: ThrowbackCardProps) => {
+const ThrowbackCard = ({
+	artistImage,
+	title,
+	desc,
+	image,
+}: ThrowbackCardProps) => {
 	const navigation = useNavigation();
 
 	const handlePress = () => {
@@ -16,7 +24,8 @@ const ThrowbackCard = ({ artistImage }: ThrowbackCardProps) => {
 	return (
 		<TouchableOpacity style={styles.container} onPress={handlePress}>
 			<Image
-				source={require("../../assets/me.jpg")}
+				// source={require(`../assets/me.`)}
+				source={require("../../assets/handlifted.jpg")}
 				style={
 					artistImage
 						? [styles.container, styles.artistCoverImage]
@@ -24,8 +33,8 @@ const ThrowbackCard = ({ artistImage }: ThrowbackCardProps) => {
 				}
 			/>
 			<View style={styles.texts}>
-				<Text style={styles.title}>90 Anthem </Text>
-				<Text style={styles.desc}>The songs rocked the 90s....</Text>
+				<Text style={styles.title}>{title} </Text>
+				<Text style={styles.desc}>{desc}</Text>
 			</View>
 		</TouchableOpacity>
 	);
